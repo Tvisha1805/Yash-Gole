@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-primary: #E3FF00;
+  --color-secondary: #D2AD05;
+  --color-tertiary: #D2AD05;
+  --color-neutral: #0A0A0A;
+  
+  --font-headline: var(--font-space-grotesk);
+  --font-body: var(--font-jakarta);
+}
+
+body {
+  background-color: var(--color-neutral);
+  color: #ededed;
+}
+
+/* Enable native smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hide scrollbars visually but retain scroll layout natively */
+html, body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 35px rgba(227, 255, 0, 0.45);
+  }
+}
