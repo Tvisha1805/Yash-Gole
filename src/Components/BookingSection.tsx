@@ -52,14 +52,7 @@ export default function BookingSection() {
       const result = await response.json();
 
       if (result.success) {
-        // Prepare WhatsApp message
-        const whatsappMsg = encodeURIComponent(
-          `Hi! New Booking Inquiry:\nName: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone}\nEvent: ${form.eventType}\nDate: ${form.eventDate}\nDetails: ${form.details}`
-        );
-
-        // Open WhatsApp in a new tab
-        window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMsg}`, '_blank');
-
+        // Submission successful - User stays on page to see Success message
         setStatus("success");
         setForm({ name: "", email: "", phone: "", eventType: "", eventDate: "", details: "" });
       } else {
@@ -72,7 +65,7 @@ export default function BookingSection() {
   };
 
   const whatsappMsg = encodeURIComponent(
-    `Hi Yash! I'd like to inquire about a booking.\nName: ${form.name}\nEvent: ${form.eventType}\nDate: ${form.eventDate}`
+    `Hi Yash! I'd like to inquire about a booking.\n\nName: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone}\nEvent: ${form.eventType}\nDate: ${form.eventDate}\nDetails: ${form.details}`
   );
 
   return (

@@ -15,7 +15,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata = {
-  title: "Yash Gole | The Laugh Anchor",
+  title: "Yash Gole",
   description: "Stage & Boardroom Maestro. From corporate boardrooms to sold-out comedy clubs.",
 };
 
