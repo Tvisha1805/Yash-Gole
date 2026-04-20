@@ -25,28 +25,50 @@ export default function BookingSection() {
     setForm((p) => ({ ...p, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("loading");
 
-    setTimeout(() => {
-      const subject = encodeURIComponent(`Booking Inquiry: ${form.eventType}`);
-      const body = encodeURIComponent(
-        `Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone}\nEvent Type: ${form.eventType}\nDate: ${form.eventDate}\n\nDetails:\n${form.details}`
-      );
-      const whatsappMsg = encodeURIComponent(
-        `Hi! New Booking Inquiry:\nName: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone}\nEvent: ${form.eventType}\nDate: ${form.eventDate}\nDetails: ${form.details}`
-      );
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "463475b3-ff45-415f-9c05-11c447338d79",
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          eventType: form.eventType,
+          eventDate: form.eventDate,
+          details: form.details,
+          subject: `New Booking Inquiry: ${form.eventType} from ${form.name}`,
+          from_name: "Yash Gole Portfolio Website",
+        }),
+      });
 
-      // Open Mail client in a new tab to ensure it successfully pops up
-      window.open(`mailto:${EMAIL}?subject=${subject}&body=${body}`, '_blank');
+      const result = await response.json();
 
-      // Open WhatsApp in a new tab
-      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMsg}`, '_blank');
+      if (result.success) {
+        // Prepare WhatsApp message
+        const whatsappMsg = encodeURIComponent(
+          `Hi! New Booking Inquiry:\nName: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone}\nEvent: ${form.eventType}\nDate: ${form.eventDate}\nDetails: ${form.details}`
+        );
 
-      setStatus("success");
-      setForm({ name: "", email: "", phone: "", eventType: "", eventDate: "", details: "" });
-    }, 600);
+        // Open WhatsApp in a new tab
+        window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMsg}`, '_blank');
+
+        setStatus("success");
+        setForm({ name: "", email: "", phone: "", eventType: "", eventDate: "", details: "" });
+      } else {
+        setStatus("error");
+      }
+    } catch (error) {
+      console.error("Link Error:", error);
+      setStatus("error");
+    }
   };
 
   const whatsappMsg = encodeURIComponent(
@@ -250,14 +272,14 @@ export default function BookingSection() {
                   </div>
                   <div className="flex flex-col gap-2">
                     <label className="text-[9px] font-black tracking-[0.2em] uppercase text-gray-500">Event Date</label>
-                    <input
-                      name="eventDate"
-                      type="date"
-                      value={form.eventDate}
-                      onChange={handleChange}
-                      suppressHydrationWarning={true}
-                      className="bg-white/[0.04] border border-white/10 focus:border-primary/60 text-white text-sm px-4 py-3 outline-none transition-colors"
-                    />
+                      <input
+                        name="eventDate"
+                        type="date"
+                        value={form.eventDate}
+                        onChange={handleChange}
+                        suppressHydrationWarning={true}
+                        className="bg-white/[0.04] border border-white/10 focus:border-primary/60 text-white text-sm px-4 py-3 outline-none transition-colors [color-scheme:dark]"
+                      />
                   </div>
                 </div>
 

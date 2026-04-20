@@ -18,13 +18,13 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative w-full min-h-[calc(100vh-88px)] flex flex-col items-center justify-center md:items-end md:justify-center pt-8 md:pt-12 pb-24 overflow-hidden bg-[#0A0A0A]">
+    <section className="relative w-full min-h-[calc(100vh-80px)] flex flex-col items-end justify-start md:justify-between pt-4 md:pt-12 pb-10 md:pb-24 overflow-hidden bg-[#0A0A0A]">
 
       {/* Background Image Container */}
       <motion.div
-        initial={{ scale: 1.05, opacity: 0 }}
+        initial={{ scale: 1.1, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 1.5, ease: "easeOut" }}
+        transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
         className="absolute inset-0 z-0"
       >
         <Image
@@ -35,43 +35,63 @@ export default function Hero() {
           quality={100}
           unoptimized
           sizes="100vw"
-          className="object-cover object-[35%_top] md:object-[left_center] pointer-events-none filter brightness-90 contrast-[1.15]"
+          className="object-cover object-[25%_top] md:object-[left_center] pointer-events-none filter brightness-[0.7] md:brightness-90 contrast-[1.1]"
         />
-        {/* Seamless transition into next section via aggressive bottom fade */}
-        <div className="absolute inset-x-0 bottom-0 h-[40vh] bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/90 to-transparent z-10 w-full pointer-events-none"></div>
-
-        <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[#0A0A0A]/60 to-transparent"></div>
-        <div className="absolute inset-0 hidden md:block bg-gradient-to-r from-transparent via-[#0A0A0A]/50 to-[#0A0A0A]/95"></div>
+        {/* Aggressive focal gradient to ground the elements */}
+        <div className="absolute inset-x-0 bottom-0 h-[70vh] bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/60 to-transparent z-10 w-full pointer-events-none"></div>
+        <div className="absolute inset-x-0 top-0 h-64 bg-gradient-to-b from-[#0A0A0A]/80 to-transparent"></div>
+        <div className="absolute inset-0 hidden md:block bg-gradient-to-r from-transparent via-[#0A0A0A]/20 to-[#0A0A0A]/90"></div>
       </motion.div>
 
-      {/* Foreground Text Box - Aligned to the Right/End */}
       <motion.div
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="relative z-20 flex flex-col items-center md:items-end text-center md:text-right px-6 sm:px-12 md:px-16 lg:px-24 xl:px-32 w-full mt-auto pb-12 lg:pb-24"
+        className="relative z-20 flex flex-col items-end text-right px-6 sm:px-12 md:px-20 lg:px-32 w-full flex-grow h-full"
       >
-        <motion.div variants={itemVariants} className="text-secondary text-xs sm:text-sm md:text-base font-black tracking-[0.2em] mb-4 md:mb-6 uppercase flex items-center justify-center md:justify-end gap-3 md:gap-4 w-full drop-shadow-md">
-          <span className="hidden md:inline-block w-12 h-[2px] bg-secondary"></span>
-          Stand-up Comedian &bull; Corporate Host
-        </motion.div>
+        {/* Brand & Name Group - Moves Up on Desktop */}
+        <div className="flex flex-col items-end w-full mb-auto mt-0">
+          <motion.div 
+            variants={itemVariants} 
+            className="relative group mb-6 md:mb-8 transition-all duration-500"
+          >
+            <div className="absolute -inset-1 bg-gradient-to-r from-primary/0 via-primary/30 to-primary/0 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+            <div className="relative text-secondary text-[11px] sm:text-sm font-black tracking-[0.3em] uppercase flex items-center justify-center md:justify-end gap-4 w-full">
+              <span className="hidden md:inline-block w-8 h-[1px] bg-secondary/50"></span>
+              <span className="drop-shadow-lg">Stand-up Comedian &bull; Corporate Host</span>
+            </div>
+          </motion.div>
 
-        <motion.h1 variants={itemVariants} className="font-headline text-5xl sm:text-7xl md:text-[6rem] lg:text-[7.5rem] xl:text-[8rem] font-black leading-[0.95] md:leading-[0.9] tracking-tighter mb-6 md:mb-8 text-[#ededed] uppercase w-full max-w-[850px] md:max-w-none">
-          YASH <br className="hidden min-[400px]:block" />
-          <span className="min-[400px]:hidden">{" "}</span>
-          <span className="text-primary drop-shadow-[0_0_35px_rgba(227,255,0,0.45)]">GOLE.</span>
-        </motion.h1>
+          <motion.h1 
+            variants={itemVariants} 
+            className="font-headline text-[3.8rem] sm:text-[8rem] md:text-[8rem] lg:text-[10rem] xl:text-[13rem] font-black leading-[0.85] tracking-[-0.04em] mb-12 md:mb-0 uppercase w-full max-w-[900px] md:max-w-none transform md:translate-x-4"
+          >
+            <span className="block text-transparent bg-clip-text bg-gradient-to-b from-white via-[#fafafa] to-white/40 drop-shadow-2xl">
+              YASH
+            </span>
+            <span className="block text-primary drop-shadow-[0_0_45px_rgba(227,255,0,0.35)] filter brightness-110">
+              GOLE<span className="text-[0.4em] text-primary ml-1">.</span>
+            </span>
+          </motion.h1>
+        </div>
 
-        <motion.p variants={itemVariants} className="text-gray-300 opacity-90 text-base sm:text-lg md:text-xl font-body max-w-lg lg:max-w-2xl md:ml-auto mb-10 md:mb-12 leading-relaxed drop-shadow-lg px-2 md:px-0">
-          Unleashing high-octane, unfiltered stand-up comedy that brings the house down.
-          From slaying underground comedy clubs to bringing sharp wit to elite corporate boardrooms, Yash masters every stage.
-        </motion.p>
-
-        <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-center md:justify-end gap-4 md:gap-5 w-full">
-          <Link href="/#bookings" className="bg-primary hover:bg-secondary text-black font-bold px-8 md:px-10 py-3.5 md:py-4 rounded transition-all shadow-[0_0_20px_rgba(227,255,0,0.3)] hover:shadow-[0_0_35px_rgba(210,173,5,0.5)] md:hover:-translate-y-0.5 uppercase tracking-[0.1em] text-xs sm:text-sm w-full sm:w-auto min-w-[200px] text-center">
-            Book Now
+        {/* Buttons Layer - Stays Centered/Bottom */}
+        <motion.div 
+          variants={itemVariants} 
+          className="flex flex-col sm:flex-row items-center justify-center md:justify-end gap-4 md:gap-6 w-full mt-auto md:mb-12 lg:mb-24"
+        >
+          <Link 
+            href="/#bookings" 
+            className="group relative overflow-hidden bg-primary text-black font-black px-10 py-4 rounded-sm transition-all shadow-[0_0_25px_rgba(227,255,0,0.2)] hover:shadow-[0_0_40px_rgba(227,255,0,0.4)] hover:-translate-y-1 active:translate-y-0 uppercase tracking-widest text-[13px] w-full sm:w-auto min-w-[210px] text-center"
+          >
+            <span className="relative z-10">Book Now</span>
+            <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500 ease-in-out"></div>
           </Link>
-          <Link href="/#gallery" className="bg-[#0A0A0A]/50 md:backdrop-blur-md border border-white/20 hover:border-primary hover:bg-[#0A0A0A] hover:text-primary text-[#ededed] font-bold px-8 md:px-10 py-3.5 md:py-4 rounded transition-all shadow-xl uppercase tracking-[0.1em] text-xs sm:text-sm flex items-center justify-center w-full sm:w-auto min-w-[200px]">
+          
+          <Link 
+            href="/#gallery" 
+            className="backdrop-blur-xl bg-white/5 border border-white/10 hover:border-primary/50 hover:bg-white/10 text-white font-bold px-10 py-4 rounded-sm transition-all uppercase tracking-widest text-[13px] flex items-center justify-center w-full sm:w-auto min-w-[210px] shadow-2xl"
+          >
             Watch Sets
           </Link>
         </motion.div>
