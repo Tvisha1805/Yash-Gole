@@ -1,5 +1,5 @@
 import { Space_Grotesk, Plus_Jakarta_Sans } from "next/font/google";
-import Navbar from "../components/Navbar";
+import Navbar from "../Components/Navbar";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({

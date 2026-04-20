@@ -1,5 +1,5 @@
 "use client";
-import ReviewsSection from "../../components/ReviewsSection";
+import ReviewsSection from "../../Components/ReviewsSection";
 import { motion } from "framer-motion";
 
 export default function ReviewsPage() {
@@ -20,7 +20,7 @@ export default function ReviewsPage() {
               <span className="text-primary">Are Saying</span>
             </h1>
             <p className="text-gray-500 text-sm mt-5 max-w-md">
-              Real feedback from audiences and event organizers globally. 
+              Real feedback from audiences and event organizers globally.
               The energy, the timing, and the laughs that define a Yash Gole show.
             </p>
           </motion.div>

@@ -1,11 +1,11 @@
-import Hero from "../components/Hero";
-import Marquee from "../components/Marquee";
-import About from "../components/About";
-import GalleryPreview from "../components/GalleryPreview";
-import PhotoGallery from "../components/PhotoGallery";
-import EventHighlights from "../components/EventHighlights";
-import ReviewsSection from "../components/ReviewsSection";
-import BookingSection from "../components/BookingSection";
+import Hero from "../Components/Hero"; // Trigger refresh
+import Marquee from "../Components/Marquee";
+import About from "../Components/About";
+import GalleryPreview from "../Components/GalleryPreview";
+import PhotoGallery from "../Components/PhotoGallery";
+import EventHighlights from "../Components/EventHighlights";
+import ReviewsSection from "../Components/ReviewsSection";
+import BookingSection from "../Components/BookingSection";
 
 export default function Home() {
   return (
@@ -25,14 +25,14 @@ export default function Home() {
       <GalleryPreview />
       <EventHighlights />
       <PhotoGallery />
-      
-      <section id="reviews" className="w-full bg-neutral py-24 md:py-32">
+
+      <section id="reviews" className="w-full bg-neutral py-24 md:py-32 scroll-mt-24">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <ReviewsSection />
         </div>
       </section>
 
-      <section id="bookings" className="w-full bg-neutral py-24 md:py-32">
+      <section id="bookings" className="w-full bg-neutral py-24 md:py-32 scroll-mt-24">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <BookingSection />
         </div>

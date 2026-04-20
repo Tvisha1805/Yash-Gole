@@ -1,5 +1,5 @@
 "use client";
-import BookingSection from "../../components/BookingSection";
+import BookingSection from "../../Components/BookingSection";
 import { motion } from "framer-motion";
 
 export default function BookingPage() {
