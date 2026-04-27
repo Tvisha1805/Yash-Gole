@@ -21,7 +21,7 @@ export default function BookingPage() {
             </h1>
             <p className="text-gray-500 text-sm mt-5 max-w-md">
               Ready to elevate your event with high-octane comedy? 
-              Fill out the inquiry form below and let's make it happen.
+              Fill out the inquiry form below and let&apos;s make it happen.
             </p>
           </motion.div>
 

@@ -103,7 +103,7 @@ export default function ReviewsSection() {
           >
             <Stars count={r.stars} />
             <p className={`text-sm leading-relaxed mb-6 font-medium ${r.featured ? "text-black" : "text-gray-300"}`}>
-              "{r.text}"
+              &quot;{r.text}&quot;
             </p>
             <div>
               <p className={`text-sm font-black ${r.featured ? "text-black" : "text-white"}`}>{r.name}</p>

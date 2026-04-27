@@ -52,14 +52,7 @@ export default function BookingSection() {
       const result = await response.json();
 
       if (result.success) {
-        // Prepare WhatsApp message
-        const whatsappMsg = encodeURIComponent(
-          `Hi! New Booking Inquiry:\nName: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone}\nEvent: ${form.eventType}\nDate: ${form.eventDate}\nDetails: ${form.details}`
-        );
-
-        // Open WhatsApp in a new tab
-        window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMsg}`, '_blank');
-
+        // Submission successful - User stays on page to see Success message
         setStatus("success");
         setForm({ name: "", email: "", phone: "", eventType: "", eventDate: "", details: "" });
       } else {
@@ -72,7 +65,7 @@ export default function BookingSection() {
   };
 
   const whatsappMsg = encodeURIComponent(
-    `Hi Yash! I'd like to inquire about a booking.\nName: ${form.name}\nEvent: ${form.eventType}\nDate: ${form.eventDate}`
+    `Hi Yash! I'd like to inquire about a booking.\n\nName: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone}\nEvent: ${form.eventType}\nDate: ${form.eventDate}\nDetails: ${form.details}`
   );
 
   return (
@@ -94,7 +87,7 @@ export default function BookingSection() {
           </h2>
           <p className="text-gray-500 text-sm leading-relaxed mb-10 max-w-sm">
             Ready to elevate your event with high-octane comedy?
-            Fill out the form below and let's make it happen.
+            Fill out the form below and let&apos;s make it happen.
           </p>
 
           {/* Contact Links */}
@@ -172,7 +165,7 @@ export default function BookingSection() {
             <p className="text-[9px] font-black tracking-[0.2em] uppercase text-primary mb-1">Performance Guarantee</p>
             <p className="text-gray-500 text-xs leading-relaxed">
               Every booking includes a dedicated production manager, custom soundcheck,
-              and a performance tailored specifically to your venue's acoustics and lighting profile.
+              and a performance tailored specifically to your venue&apos;s acoustics and lighting profile.
             </p>
           </div>
         </div>
@@ -196,7 +189,7 @@ export default function BookingSection() {
                   Inquiry Received!
                 </h3>
                 <p className="text-gray-400 text-sm max-w-xs">
-                  We'll get back to you within 24 hours. Check your email or WhatsApp for a follow-up.
+                  We&apos;ll get back to you within 24 hours. Check your email or WhatsApp for a follow-up.
                 </p>
                 <button
                   onClick={() => setStatus("idle")}
