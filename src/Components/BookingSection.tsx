@@ -87,7 +87,7 @@ export default function BookingSection() {
           </h2>
           <p className="text-gray-500 text-sm leading-relaxed mb-10 max-w-sm">
             Ready to elevate your event with high-octane comedy?
-            Fill out the form below and let's make it happen.
+            Fill out the form below and let&apos;s make it happen.
           </p>
 
           {/* Contact Links */}
@@ -165,7 +165,7 @@ export default function BookingSection() {
             <p className="text-[9px] font-black tracking-[0.2em] uppercase text-primary mb-1">Performance Guarantee</p>
             <p className="text-gray-500 text-xs leading-relaxed">
               Every booking includes a dedicated production manager, custom soundcheck,
-              and a performance tailored specifically to your venue's acoustics and lighting profile.
+              and a performance tailored specifically to your venue&apos;s acoustics and lighting profile.
             </p>
           </div>
         </div>
@@ -189,7 +189,7 @@ export default function BookingSection() {
                   Inquiry Received!
                 </h3>
                 <p className="text-gray-400 text-sm max-w-xs">
-                  We'll get back to you within 24 hours. Check your email or WhatsApp for a follow-up.
+                  We&apos;ll get back to you within 24 hours. Check your email or WhatsApp for a follow-up.
                 </p>
                 <button
                   onClick={() => setStatus("idle")}

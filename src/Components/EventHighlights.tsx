@@ -73,13 +73,13 @@ const events: Event[] = [
     id: 5,
     tag: "",
     tagColor: "text-primary",
-    title: "Pune Open Mics",
+    title: "Open Mics",
     location: "Pune, India",
     date: "Ongoing",
     description:
       "A regular on the open mic circuit. Testing, refining, and delivering fresh comedy across club stages week after week.",
     thumbnail: "/photo8.jpg",
-    photos: ["/photo8.jpg", "/photo11.jpg", "/photo15.jpg", "/photo23.jpg", "/photo25.jpg", "/photo37.jpg"],
+    photos: ["/photo8.jpg", "/photo11.jpg", "/photo15.jpg", "/photo23.jpg", "/photo25.jpg", "/photo37.jpg","/photo38.jpeg","/photo39.jpeg","/photo42.jpeg"],
     videos: ["/video1.mp4"],
   },
   {
@@ -93,7 +93,7 @@ const events: Event[] = [
       "Anchoring a high-energy crowd at Sinhgad Cultural Center. Keeping 3000+ students engaged, entertained, and completely in sync with the stage.",
     thumbnail: "/photo3.jpg",
     photos: ["/photo3.jpg", "/photo5.jpg", "/photo6.jpg", "/photo10.jpg", "/photo13.jpg", "/photo18.jpg", "/photo20.jpg", "/photo24.jpg", "/photo27.jpg", "/photo30.jpg"],
-    videos: ["/video9.mp4", "/video8.mp4", "/video4.mp4", "/video10.mp4", "/video11.mp4"],
+    videos: ["/video9.mp4", "/video8.mp4", "/video4.mp4", "/video10.mp4", "/video11.mp4","/video12.mp4"],
   },
 ];
 

@@ -35,7 +35,7 @@ export default function PhotoGallery() {
             STAGE <span className="text-primary drop-shadow-[0_0_35px_rgba(227,255,0,0.45)]">ENERGY.</span>
           </h2>
           <p className="text-gray-500 text-sm mt-5 max-w-md mx-auto font-body">
-            Every photo tells the story the jokes don't — the quiet before the punchline, the room alive with laughter.
+            Every photo tells the story the jokes don&apos;t — the quiet before the punchline, the room alive with laughter.
           </p>
         </motion.div>
 

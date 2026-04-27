@@ -101,6 +101,7 @@ export default function GalleryPreview() {
     { src: "/video9.mp4", title: "FlashLights", subtitle: "Pune" },
     { src: "/video10.mp4", title: "FlashLights2", subtitle: "Pune" },
     { src: "/video11.mp4", title: "Prelude to Chaos", subtitle: "Pune" },
+    { src: "/video12.mp4", title: "The Subtle Shayar 2", subtitle: "Pune" },
   ];
 
   // Get first 3 videos

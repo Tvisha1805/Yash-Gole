@@ -1,6 +1,7 @@
 import { Space_Grotesk, Plus_Jakarta_Sans } from "next/font/google";
 import Navbar from "../Components/Navbar";
 import "./globals.css";
+import { Analytics } from '@vercel/analytics/react';
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -28,6 +29,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="min-h-full flex flex-col bg-neutral text-white font-body selection:bg-primary selection:text-black overflow-x-hidden">
         <Navbar />
         {children}
+        <Analytics />
       </body>
     </html>
   );
